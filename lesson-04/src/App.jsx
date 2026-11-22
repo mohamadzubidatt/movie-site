@@ -33,6 +33,11 @@ function App() {
     setVisibleCount(visibleCount + 4);
   }
 
+  function selectGenre(genre) {
+    setSelectedGenre(genre);
+    setVisibleCount(4);
+  }
+
   return (
     <>
       <Header />
@@ -56,7 +61,7 @@ function App() {
 
           <button
             className={selectedGenre === "all" ? "btn btn--active" : "btn"}
-            onClick={() => setSelectedGenre("all")}
+            onClick={() => selectGenre("all")}
           >
             הכל
           </button>
@@ -64,7 +69,7 @@ function App() {
             <button
               key={genre}
               className={selectedGenre === genre ? "btn btn--active" : "btn"}
-              onClick={() => setSelectedGenre(genre)}
+              onClick={() => selectGenre(genre)}
             >
               {genre}
             </button>
